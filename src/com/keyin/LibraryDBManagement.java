@@ -1,14 +1,11 @@
 package com.keyin;
-
-
-
-import java.util.ArrayList;
 import java.util.List;
 
-public class LibraryManagement {
+public class LibraryDBManagement {
     private List<Books> books;
     private List<Author> authors;
     private List<Patron> patrons;
+    private List<BooksCheckedOut> checkedOutBooks;
 
     public List<Books> getBooks() {
         return books;
@@ -20,6 +17,14 @@ public class LibraryManagement {
 
     public List<Author> getAuthors() {
         return authors;
+    }
+
+    public void setCheckedOutBooks(List<BooksCheckedOut> checkedOutBooks) {
+        this.checkedOutBooks = checkedOutBooks;
+    }
+
+    public List<BooksCheckedOut> getCheckedOutBooks() {
+        return checkedOutBooks;
     }
 
     public void setAuthors(List<Author> authors) {
@@ -34,9 +39,9 @@ public class LibraryManagement {
         this.patrons = patrons;
     }
 
-    public Books getBooksById(int id){
-        for (Books book : books){
-            if(book.getId() == id){
+    public Books getBooksById(int id) {
+        for (Books book : books) {
+            if (book.getId() == id) {
                 return book;
             }
         }
